@@ -1,0 +1,27 @@
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          facebook:
+#            clientId: 
+#            clientSecret: 
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          custom:
+            client-id: 
+            client-secret: 
+#            scope: read,write
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/custom
+        provider:
+          custom:
+            authorization-uri: https://www.facebook.com/v13.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v13.0/oauth/access_token
+#            user-info-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/userinfo
+#            user-name-attribute: preferred_username
